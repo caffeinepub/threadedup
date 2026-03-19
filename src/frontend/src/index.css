@@ -1,0 +1,158 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Figtree:wght@300;400;500;600;700&display=swap");
+
+@font-face {
+  font-family: "Playfair Display";
+  src: url("/assets/fonts/PlayfairDisplay.woff2") format("woff2");
+  font-weight: 400 800;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Figtree";
+  src: url("/assets/fonts/Figtree.woff2") format("woff2");
+  font-weight: 300 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Instrument Serif";
+  src: url("/assets/fonts/InstrumentSerif-Italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Warm cream background */
+    --background: 97 0.01 80;
+    --foreground: 22 0.025 30;
+
+    /* Cards: pure white */
+    --card: 99 0.005 70;
+    --card-foreground: 22 0.025 30;
+
+    /* Popover */
+    --popover: 99 0.005 70;
+    --popover-foreground: 22 0.025 30;
+
+    /* Primary: blush rose */
+    --primary: 68 0.14 12;
+    --primary-foreground: 99 0 0;
+
+    /* Secondary: soft lavender */
+    --secondary: 87 0.07 300;
+    --secondary-foreground: 35 0.05 300;
+
+    /* Muted: light petal */
+    --muted: 94 0.025 60;
+    --muted-foreground: 55 0.04 50;
+
+    /* Accent: sage green */
+    --accent: 80 0.08 150;
+    --accent-foreground: 25 0.06 145;
+
+    /* Destructive */
+    --destructive: 55 0.22 25;
+    --destructive-foreground: 99 0 0;
+
+    /* Borders */
+    --border: 90 0.03 60;
+    --input: 90 0.03 60;
+    --ring: 68 0.14 12;
+
+    /* Radius */
+    --radius: 0.75rem;
+
+    /* Charts */
+    --chart-1: 68 0.14 12;
+    --chart-2: 87 0.07 300;
+    --chart-3: 80 0.08 150;
+    --chart-4: 92 0.06 95;
+    --chart-5: 75 0.1 245;
+
+    /* Sidebar */
+    --sidebar: 97 0.01 80;
+    --sidebar-foreground: 22 0.025 30;
+    --sidebar-primary: 68 0.14 12;
+    --sidebar-primary-foreground: 99 0 0;
+    --sidebar-accent: 94 0.025 60;
+    --sidebar-accent-foreground: 22 0.025 30;
+    --sidebar-border: 90 0.03 60;
+    --sidebar-ring: 68 0.14 12;
+
+    /* Custom brand tokens */
+    --blush: 85 0.12 10;
+    --lavender: 87 0.07 300;
+    --sage: 80 0.08 150;
+    --mint: 90 0.07 165;
+    --cream: 97 0.015 80;
+    --peach: 90 0.08 55;
+  }
+
+  * {
+    @apply border-border;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display;
+  }
+}
+
+@layer utilities {
+  .text-blush {
+    color: oklch(var(--blush));
+  }
+  .bg-blush {
+    background-color: oklch(var(--blush));
+  }
+  .bg-blush-light {
+    background-color: oklch(92 0.06 10);
+  }
+  .bg-lavender-light {
+    background-color: oklch(93 0.04 300);
+  }
+  .bg-sage-light {
+    background-color: oklch(93 0.04 150);
+  }
+  .bg-mint-light {
+    background-color: oklch(94 0.04 165);
+  }
+  .bg-peach-light {
+    background-color: oklch(94 0.05 55);
+  }
+
+  .gradient-hero {
+    background: linear-gradient(
+      135deg,
+      oklch(96 0.02 10) 0%,
+      oklch(95 0.03 300) 50%,
+      oklch(96 0.02 10) 100%
+    );
+  }
+
+  .gradient-trust {
+    background: linear-gradient(
+      135deg,
+      oklch(92 0.05 12) 0%,
+      oklch(90 0.06 300) 100%
+    );
+  }
+
+  .font-italic-accent {
+    font-family: "Instrument Serif", serif;
+    font-style: italic;
+  }
+}
