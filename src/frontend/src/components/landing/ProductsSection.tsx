@@ -107,10 +107,10 @@ export default function ProductsSection() {
                   </h3>
                   <div className="flex items-center gap-2 mb-3">
                     <span className="text-lg font-bold text-primary">
-                      ${product.price}
+                      ₹{product.price}
                     </span>
                     <span className="text-sm text-muted-foreground line-through">
-                      ${product.original}
+                      ₹{product.original}
                     </span>
                     <span className="text-xs font-semibold text-accent-foreground bg-sage-light rounded-full px-2 py-0.5">
                       {Math.round(
